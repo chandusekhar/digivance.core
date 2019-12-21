@@ -42,11 +42,15 @@ namespace Digivance.Core.Models {
         public string State { get; set; }
 
         /// <summary>
-        /// UserAccount is a reference to the User Account record that has provided
-        /// valid credentials.
+        /// UserAccount is a reference to the UserAccount record that the user has 
+        /// provided valid credentials for
         /// </summary>
         public virtual UserAccount UserAccount { get; set; }
 
+        /// <summary>
+        /// UserAccountID is the ID of the UserAccount record that the user has
+        /// provided valid credentials for
+        /// </summary>
         public long? UserAccountID { get; set; }
 
         /// <summary>
