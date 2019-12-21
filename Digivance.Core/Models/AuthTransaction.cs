@@ -15,6 +15,14 @@ namespace Digivance.Core.Models {
         public DateTime ExpirationDate { get; set; }
 
         /// <summary>
+        /// IsMfaValid is used by the auth system to know if this user has already provided
+        /// their valid MFA code (happens after initial credentials are submitted). If this
+        /// is false AND the UserAccount has an MFA Secret set the system will ask the user
+        /// to submit an MFA Code.
+        /// </summary>
+        public bool IsMfaValid { get; set; }
+
+        /// <summary>
         /// RedirectUrl is the url the caller is asking the access code to be
         /// directed to upon successful sign in & permission granting
         /// </summary>
@@ -32,6 +40,14 @@ namespace Digivance.Core.Models {
         /// back upon successful sign in & permission granting (E.g. caller's state)
         /// </summary>
         public string State { get; set; }
+
+        /// <summary>
+        /// UserAccount is a reference to the User Account record that has provided
+        /// valid credentials.
+        /// </summary>
+        public virtual UserAccount UserAccount { get; set; }
+
+        public long? UserAccountID { get; set; }
 
         /// <summary>
         /// Default constructor

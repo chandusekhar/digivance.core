@@ -39,14 +39,6 @@ namespace Digivance.Core.Models {
         public string RedirectUrl { get; set; }
 
         /// <summary>
-        /// SessionID is used by the auth system to validate form submission. E.g. this
-        /// is used when asking the user to grant permissions, the form submits this and
-        /// the users consent to trigger the auth system to redirect the user with the
-        /// access code to the redirect URL
-        /// </summary>
-        public string SessionID { get; set; }
-
-        /// <summary>
         /// State was transferred from the AuthTransaction when the user signed in and
         /// granted permissions
         /// </summary>
