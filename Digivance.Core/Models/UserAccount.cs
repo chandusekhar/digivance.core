@@ -59,6 +59,12 @@ namespace Digivance.Core.Models {
         public virtual ICollection<UserProductRelation> OwnedProductLicenses { get; set; }
 
         /// <summary>
+        /// UserProductPermissions is the optional collection of UserProductPermissions that this user
+        /// has granted.
+        /// </summary>
+        public virtual ICollection<UserProductPermission> UserProductPermissions { get; set; }
+
+        /// <summary>
         /// PasswordHash is the encrypted and hashed password for this user account
         /// </summary>
         public string PasswordHash { get; set; }

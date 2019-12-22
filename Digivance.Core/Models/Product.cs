@@ -6,6 +6,12 @@ namespace Digivance.Core.Models {
     /// </summary>
     public class Product : BaseModel {
         /// <summary>
+        /// AuthProductPermissions is a reference to the permission access this product needs
+        /// to a user's Digivance account
+        /// </summary>
+        public virtual ICollection<AuthProductPermission> AuthProductPermissions { get; set; }
+
+        /// <summary>
         /// AuthProductRedirects is a reference to the currently white listed AuthProductRedirect
         /// records for this Product
         /// </summary>
@@ -55,6 +61,12 @@ namespace Digivance.Core.Models {
         public virtual ICollection<ProductLicense> ProductLicenses { get; set; }
 
         /// <summary>
+        /// UserProductPermissions are the optional UserProductPermissions granted by users for
+        /// this product
+        /// </summary>
+        public virtual ICollection<UserProductPermission> UserProductPermissions { get; set; }
+
+        /// <summary>
         /// WebUrl is the https web address to this products landing page
         /// </summary>
         public string WebUrl { get; set; }
@@ -64,5 +76,4 @@ namespace Digivance.Core.Models {
         /// </summary>
         public Product() : base() { }
     }
-
 }
