@@ -28,7 +28,7 @@ namespace Digivance.Core.Models {
         /// ProductID is the id of the product that the user signed in and granted
         /// permissions to
         /// </summary>
-        public long ProductID { get; set; }
+        public long? ProductID { get; set; }
 
         /// <summary>
         /// UserAccount is a reference to the UserAccount that signed in to the Product

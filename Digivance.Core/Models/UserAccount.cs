@@ -20,6 +20,12 @@ namespace Digivance.Core.Models {
         public virtual ICollection<AuthBearerToken> AuthBearerTokens { get; set; }
 
         /// <summary>
+        /// AuthTransactions is a reference to the AuthTransactions currently in progress for this
+        /// user account
+        /// </summary>
+        public virtual ICollection<AuthTransaction> AuthTransactions { get; set; }
+
+        /// <summary>
         /// DisplayName returns friendly version of this User Account's first name and last name
         /// </summary>
         [NotMapped]
@@ -62,6 +68,12 @@ namespace Digivance.Core.Models {
         /// account owns (e.g. pays for?)
         /// </summary>
         public virtual ICollection<UserProductRelation> OwnedProductLicenses { get; set; }
+
+        /// <summary>
+        /// UserAccountLockouts is the optional collection of UserAccountLockout records for this user
+        /// account. Auth system should halt the login process for users with user account lockouts
+        /// </summary>
+        public virtual ICollection<UserAccountLockout> UserAccountLockouts { get; set; }
 
         /// <summary>
         /// UserProductPermissions is the optional collection of UserProductPermissions that this user

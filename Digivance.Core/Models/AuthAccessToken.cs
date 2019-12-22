@@ -22,15 +22,16 @@ namespace Digivance.Core.Models {
         public DateTime ExpirationDate { get; set; }
 
         /// <summary>
-        /// Product is a reference to the product that is authorized to exchange this
-        /// access token for a bearer token
+        /// Product is a reference to the optional product that is authorized to exchange 
+        /// this access token for a bearer token. (Null meaning it only applies to the
+        /// Digivance Platform itself)
         /// </summary>
         public virtual Product Product { get; set; }
 
         /// <summary>
         /// ProductID is the id of the product that may exchange this token
         /// </summary>
-        public long ProductID { get; set; }
+        public long? ProductID { get; set; }
 
         /// <summary>
         /// RedirectUrl is the url the orriginal caller requested we submit access code
