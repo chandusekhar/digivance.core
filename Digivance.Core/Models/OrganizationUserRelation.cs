@@ -6,6 +6,12 @@
     /// </summary>
     public class OrganizationUserRelation : BaseModel {
         /// <summary>
+        /// IsPrimary defines if this is this UserAccount's Primary organization affiliation
+        /// (There should be only one IsPrimary relation per user)
+        /// </summary>
+        public bool IsPrimary { get; set; }
+
+        /// <summary>
         /// Organization that this relation applies to
         /// </summary>
         public virtual Organization Organization { get; set; }

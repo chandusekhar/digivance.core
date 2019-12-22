@@ -36,6 +36,11 @@ namespace Digivance.Core.Models {
         public string FirstName { get; set; }
 
         /// <summary>
+        /// IsEmailVerified defines if this user has verified their email address yet
+        /// </summary>
+        public bool IsEmailVerified { get; set; }
+
+        /// <summary>
         /// LastName of this user
         /// </summary>
         public string LastName { get; set; }
