@@ -26,6 +26,12 @@ namespace Digivance.Core.Models {
         public virtual ICollection<AuthTransaction> AuthTransactions { get; set; }
 
         /// <summary>
+        /// FailedLoginAttempts gets used by the auth system to lockout an account when a brute force
+        /// attack is detected. (E.g. more than 3 failed attempts and the account will lock for x minutes)
+        /// </summary>
+        public int FailedLoginAttempts { get; set; }
+
+        /// <summary>
         /// DisplayName returns friendly version of this User Account's first name and last name
         /// </summary>
         [NotMapped]

@@ -34,18 +34,6 @@ namespace Digivance.Core.Models {
         public long? ProductID { get; set; }
 
         /// <summary>
-        /// RedirectUrl is the url the orriginal caller requested we submit access code
-        /// to once permission has been granted.
-        /// </summary>
-        public string RedirectUrl { get; set; }
-
-        /// <summary>
-        /// State was transferred from the AuthTransaction when the user signed in and
-        /// granted permissions
-        /// </summary>
-        public string State { get; set; }
-
-        /// <summary>
         /// UserAccount is the reference to the user account that signed in and granted 
         /// permissions to the Product
         /// </summary>
