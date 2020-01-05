@@ -4,10 +4,11 @@ using System.Text;
 
 namespace Digivance.Core.Api {
     public enum AuthStep {
-        Credentials     = 0,
-        Mfa             = 1,
-        Permissions     = 2,
-        Redirect        = 3
+        Credentials         = 0,
+        EmailVerification   = 1,
+        Mfa                 = 2,
+        Permissions         = 3,
+        Redirect            = 4
     }
 
     public class AuthResponse {

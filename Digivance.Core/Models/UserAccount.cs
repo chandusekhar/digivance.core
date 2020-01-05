@@ -43,6 +43,13 @@ namespace Digivance.Core.Models {
         public string Email { get; set; }
 
         /// <summary>
+        /// EmailVerificationCode is set when IsEmailVerified is false (E.g. during account
+        /// registration or if we allow users to change their email address). Sign in should
+        /// block on this after checking credentials.
+        /// </summary>
+        public string EmailVerificationCode { get; set; }
+
+        /// <summary>
         /// FirstName of this user
         /// </summary>
         public string FirstName { get; set; }
