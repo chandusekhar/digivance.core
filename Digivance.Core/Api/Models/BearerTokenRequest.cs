@@ -1,4 +1,4 @@
-﻿namespace Digivance.Core.Api {
+﻿namespace Digivance.Core.Api.Models {
     public class BearerTokenRequest {
         public string AccessCode { get; set; }
 

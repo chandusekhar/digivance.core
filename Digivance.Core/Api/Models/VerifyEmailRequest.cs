@@ -1,4 +1,4 @@
-﻿namespace Digivance.Core.Api {
+﻿namespace Digivance.Core.Api.Models {
     /// <summary>
     /// VerifyEmailRequest is used during auth sign in to provide the email verification
     /// code and a session id to verify the user's email address

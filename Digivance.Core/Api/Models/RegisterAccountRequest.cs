@@ -1,4 +1,4 @@
-﻿namespace Digivance.Core.Api {
+﻿namespace Digivance.Core.Api.Models {
     /// <summary>
     /// RegisterAccountRequest is used to submit email address and password to
     /// create a new User Account with

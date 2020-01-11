@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Digivance.Core.Api {
+namespace Digivance.Core.Api.Models {
     public class AuthMfaRequest {
         public string MfaCode { get; set; }
 

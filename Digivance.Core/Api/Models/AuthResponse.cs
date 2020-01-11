@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Digivance.Core.Api {
+namespace Digivance.Core.Api.Models {
     public enum AuthStep {
         Credentials         = 0,
         EmailVerification   = 1,
