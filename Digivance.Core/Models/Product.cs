@@ -6,6 +6,12 @@ namespace Digivance.Core.Models {
     /// </summary>
     public class Product : BaseModel {
         /// <summary>
+        /// AuthAccessToken is a reference to the auth access tokens pending final sign in for
+        /// this product
+        /// </summary>
+        public virtual ICollection<AuthAccessToken> AuthAccessTokens { get; set; }
+
+        /// <summary>
         /// AuthProductPermissions is a reference to the permission access this product needs
         /// to a user's Digivance account
         /// </summary>
