@@ -8,6 +8,27 @@ using System.Threading.Tasks;
 
 namespace Digivance.Core.Api {
     public class DigivanceClient : HttpClient {
+        protected string mBearerToken { get; set; }
+
+        public string BearerToken {
+            get {
+                return mBearerToken;
+            }
+
+            set {
+                Cookies.Add(new Cookie {
+                    Domain = "admin.digivance.com",
+                    Expires = DateTime.UtcNow.AddDays(1),
+                    Name = "BearerToken",
+                    Path = "/",
+                    Secure = true,
+                    Value = value
+                });
+
+                mBearerToken = value;
+            }
+        }
+
         public CookieContainer Cookies { get; set; }
 
         public DigivanceClient(HttpClientHandler handler) : base(handler) { }

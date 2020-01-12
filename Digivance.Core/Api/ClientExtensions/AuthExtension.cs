@@ -7,18 +7,27 @@ using System.Text;
 using System.Threading.Tasks;
 
 using Digivance.Core.Api.Models;
+using Digivance.Core.Models;
 
 using Newtonsoft.Json;
 
 namespace Digivance.Core.Api {
     public static class AuthExtension {
+        public async static Task<UserAccount> GetCurrentUser(this DigivanceClient client) {
+            HttpResponseMessage response = await client.GetAsync($"{client.BaseAddress}/auth/currentuser");
+            if (response.StatusCode != HttpStatusCode.OK) {
+                return null;
+            }
+
+            string payload = await response.Content.ReadAsStringAsync();
+            return JsonConvert.DeserializeObject<UserAccount>(payload);
+        }
+
         public async static Task<string> GetBearerToken(this DigivanceClient client, string accessCode, string clientSecretKey) {
             BearerTokenRequest bearerTokenRequest = new BearerTokenRequest {
                 AccessCode = accessCode,
                 ClientSecretKey = clientSecretKey
             };
-
-            //StringContent content = new StringContent(JsonConvert.SerializeObject(bearerTokenRequest), Encoding.UTF8, "application/json");
 
             HttpResponseMessage response = await client.PostAsJsonAsync($"{client.BaseAddress}/auth/bearertoken", bearerTokenRequest);
             if (response.StatusCode != HttpStatusCode.OK) {
@@ -28,8 +37,8 @@ namespace Digivance.Core.Api {
                 throw new Exception(res.Message);
             }
 
-            string bearerToken = client.GetCookie("BearerToken");
-            return bearerToken;
+            client.BearerToken = client.GetCookie("BearerToken");
+            return client.BearerToken;
         }
     }
 }
