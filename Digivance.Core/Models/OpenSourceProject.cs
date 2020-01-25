@@ -10,9 +10,22 @@
         public string Description { get; set; }
 
         /// <summary>
+        /// DigivanceMaintained is true if this project is created by and or primarily
+        /// maintained by Digivance Technologies
+        /// </summary>
+        public bool DigivanceMaintained { get; set; }
+
+        /// <summary>
         /// DocumentationURL is the link to the official documentation page
         /// </summary>
         public string DocumentationURL { get; set; }
+
+        /// <summary>
+        /// IconImageFilename is used to point to the location in the Digivance CDN
+        /// (or local file system when debugging) to the image file that should be used
+        /// as the icon for this open source project
+        /// </summary>
+        public string IconImageFilename { get; set; }
 
         /// <summary>
         /// Name is the user friendly (and unique) name of this project
