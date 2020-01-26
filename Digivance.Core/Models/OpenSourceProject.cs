@@ -28,6 +28,17 @@
         public string IconImageFilename { get; set; }
 
         /// <summary>
+        /// IsActive defines if this open source project is currently in active development
+        /// </summary>
+        public bool IsActive { get; set; }
+
+        /// <summary>
+        /// IsFeatured defines if this open source project is currently featured, such as on
+        /// the landing page and open source projects index page.
+        /// </summary>
+        public bool IsFeatured { get; set; }
+
+        /// <summary>
         /// Name is the user friendly (and unique) name of this project
         /// </summary>
         public string Name { get; set; }
